@@ -14,7 +14,7 @@ namespace InvoiceForm.DAL
             _context = context;
         }
 
-        public GenericRepository<Invoice> EmployeeRepository
+        public GenericRepository<Invoice> InvoiceRepository
         {
             get
             {
@@ -27,7 +27,7 @@ namespace InvoiceForm.DAL
             }
         }
 
-        public GenericRepository<InvoicePosition> LocationRepository
+        public GenericRepository<InvoicePosition> InvoicePositionRepository
         {
             get
             {

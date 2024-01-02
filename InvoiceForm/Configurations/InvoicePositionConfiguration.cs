@@ -9,8 +9,11 @@ namespace InvoiceForm.Configurations
     {
         public void Configure(EntityTypeBuilder<InvoicePosition> builder)
         {
-            builder.HasKey(ip => ip.InvoicePositionId)
-                   .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            builder.Property(ip => ip.InvoicePositionId)
+                   .HasColumnName("Invoice_Pos_Id")
+                   .ValueGeneratedOnAdd();
+
+            builder.HasKey(ip => ip.InvoicePositionId);
 
             builder.Property(ip => ip.Name)
                    .HasMaxLength(20)
@@ -18,9 +21,13 @@ namespace InvoiceForm.Configurations
 
             builder.HasOne(ip => ip.Invoice)
                    .WithOne(i => i.InvoicePosition)
-                   .HasForeignKey<Invoice>(i => i.Invoice_Id);
+                   .HasForeignKey<Invoice>(i => i.InvoiceId);
 
-            builder.Property(ip => ip.InvoiceId).IsRequired();
+            builder.Property(ip => ip.InvoiceId)
+                   .HasColumnName("Invoice_Id")
+                   .IsRequired();
+
+            builder.Ignore(ip => ip.Invoice);
         }
     }
 }
