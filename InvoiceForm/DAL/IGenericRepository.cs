@@ -3,10 +3,10 @@
     public interface IGenericRepository<TEntity> : IDisposable
     {
         IEnumerable<TEntity> GetAll();
-        TEntity GetById(int id);
+        TEntity GetById(decimal id);
         IEnumerable<TEntity> GetWithPredicate(Func<TEntity, bool> predicate);
         void Add(TEntity entity);
-        void Delete(int entityId);
+        void Delete(decimal entityId);
         void Update(TEntity entity);
         void Save();
     }

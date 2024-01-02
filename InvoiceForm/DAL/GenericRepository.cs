@@ -19,7 +19,7 @@ namespace InvoiceForm.DAL
             _dbSet.Add(entity);
         }
 
-        public void Delete(int id)
+        public void Delete(decimal id)
         {
             var entity = _dbSet.Find(id);
             Delete(entity);
@@ -40,7 +40,7 @@ namespace InvoiceForm.DAL
             return _dbSet.Where(predicate);
         }
 
-        public TEntity GetById(int id)
+        public TEntity GetById(decimal id)
         {
             return _dbSet.Find(id);
         }
