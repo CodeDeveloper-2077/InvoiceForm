@@ -1,5 +1,6 @@
 ﻿using InvoiceForm.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace InvoiceForm.Configurations
@@ -8,7 +9,9 @@ namespace InvoiceForm.Configurations
     {
         public void Configure(EntityTypeBuilder<InvoicePosition> builder)
         {
-            builder.HasKey(ip => ip.InvoicePositionId);
+            builder.HasKey(ip => ip.InvoicePositionId)
+                   .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
             builder.Property(ip => ip.Name)
                    .HasMaxLength(20)
                    .IsRequired();

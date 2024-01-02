@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InvoiceForm.Data
 {
-    internal class InvoiceDb : DbContext
+    public class InvoiceDb : DbContext
     {
         public InvoiceDb(DbContextOptions<InvoiceDb> options)
             : base(options)
