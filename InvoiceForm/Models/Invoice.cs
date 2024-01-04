@@ -13,7 +13,11 @@ namespace InvoiceForm.Models
 
         public decimal Value { get; set; }
 
-        [NotMapped]
-        public InvoicePosition? InvoicePosition { get; set; }
+        public ICollection<InvoicePosition>? InvoicePositions { get; set; }
+
+        public Invoice()
+        {
+            InvoicePositions = new List<InvoicePosition>();
+        }
     }
 }

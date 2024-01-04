@@ -20,8 +20,8 @@ namespace InvoiceForm.Configurations
                    .IsRequired();
 
             builder.HasOne(ip => ip.Invoice)
-                   .WithOne(i => i.InvoicePosition)
-                   .HasForeignKey<Invoice>(i => i.InvoiceId);
+                   .WithMany(i => i.InvoicePositions)
+                   .HasForeignKey(i => i.InvoiceId);
 
             builder.Property(ip => ip.InvoiceId)
                    .HasColumnName("Invoice_Id")
