@@ -14,6 +14,7 @@ namespace InvoiceForm
             var unitOfWork = this.UnitOfWorkFactory();
             _invoiceForm = new InvoiceForm(unitOfWork);
             _invoicePositionForm = new InvoicePositionForm(unitOfWork);
+            _invoiceForm.ShowDialog(this);
         }
 
         private void openInvoice_Click(object sender, EventArgs e)

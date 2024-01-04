@@ -28,45 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            openInvoice = new Button();
-            openInvoicePosition = new Button();
             SuspendLayout();
-            // 
-            // openInvoice
-            // 
-            openInvoice.Location = new Point(12, 12);
-            openInvoice.Name = "openInvoice";
-            openInvoice.Size = new Size(238, 65);
-            openInvoice.TabIndex = 0;
-            openInvoice.Text = "Open InvoiceForm";
-            openInvoice.UseVisualStyleBackColor = true;
-            openInvoice.Click += openInvoice_Click;
-            // 
-            // openInvoicePosition
-            // 
-            openInvoicePosition.Location = new Point(12, 83);
-            openInvoicePosition.Name = "openInvoicePosition";
-            openInvoicePosition.Size = new Size(238, 65);
-            openInvoicePosition.TabIndex = 1;
-            openInvoicePosition.Text = "Open InvoicePositionForm";
-            openInvoicePosition.UseVisualStyleBackColor = true;
-            openInvoicePosition.Click += openInvoicePosition_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(269, 175);
-            Controls.Add(openInvoicePosition);
-            Controls.Add(openInvoice);
+            ClientSize = new Size(528, 356);
             Name = "MainForm";
             Text = "Form1";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button openInvoice;
-        private Button openInvoicePosition;
     }
 }
